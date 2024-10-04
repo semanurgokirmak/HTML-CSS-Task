@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #05f, #9fd9ff);
+    min-height: 100vh; /* İçeriğin yüksekliğine göre ayarlanır */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+h1 {
+    font-family: "Akaya Kanadaka", system-ui;
+    color: white;
+    font-size: 72px; 
+    position: relative;
+    margin-top: 2vh; 
+    margin-bottom: 8vh;
+    text-align: center; 
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 60px; 
+    }
+
+    .window {
+        width: 90%; 
+        max-width: 400px; 
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column; 
+        padding: 10px; 
+    }
+
+    h1 {
+        font-size: 48px; 
+    }
+}
+
+
+
+.baby {
+    max-width: 100%; 
+    height: auto; 
+    display: block; /* Resmin satır içinde boşluk bırakmamasını sağlamak için */
+    margin: 0; /* Varsayılan margin'i kaldırdıkk */
+
+    margin-top: -10vh;  /*ZİYA BUNA MECBURDUM sjfdnıg */
+}
+
+
+
+.window {
+    background: radial-gradient(circle, rgb(255, 255, 255), #9fd9ff); 
+    background-color: white; 
+    box-sizing: border-box;
+    width: 90%; 
+    max-width: 450px; 
+    height: 90vw;  
+    max-height: 450px; 
+    display: flex;         
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 60px; 
+    position: relative; 
+    padding: 20px; 
+    
+}
+.book {
+    max-width: 100%;
+    height: auto; 
+    width: 212px;
+    padding-bottom: 8vh; 
+}
+
+button {
+    
+    padding: 10px 20px; 
+    font-size: 16px; 
+    font-weight: 700;
+    background-color: #B8A0FE; 
+    color: #71639D;
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10vh;
+    width: 100%; 
+    max-width: 291px; 
+    max-height: 54px;
+}
+
+button:hover {
+    background-color: #9885cf;
+}
+
+.google {
+    width: 20px;
+    height: auto;
+    border-radius: 60px;
+    margin-right: 8px; 
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
+.pin1 {
+    position: absolute;
+    top:-3vw; 
+    right: -2vw; 
+    width: 10vw;
+    max-width: 100px; 
+    min-width: 90px;
+    height: auto; 
+}
+
+.pin2 {
+    position: absolute;
+    top: -3vw; 
+    left: -2vw; 
+    width: 10vw; 
+    max-width: 100px; 
+    min-width: 90px;
+    height: auto;
+}
+
+

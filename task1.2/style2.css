@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;   /* divleri yatayda sıralar */
+    min-height: 100vh;    /* ekranın minimum yüksekliği*/
+}
+
+
+
+/* sol kısım*/
+
+.left {
+    flex-grow: 1;
+    background: linear-gradient(to bottom, #05f, #9fd9ff);
+}
+
+
+
+
+                            /*takvim kısmı*/
+
+/*günler isimleri*/
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;  /* ögeleri üstüste gelecek şekilde hizalar*/
+    align-items: center;
+    padding: 20px;
+    padding-top: 100px;  /*konteynerın etrafına boşluk bırakır*/
+    
+}
+
+.days-row {
+    display: flex;
+    justify-content: space-between;  /* ilk ve son öge kenara yaslanır, diğerleri araya eşit dağılır */
+    width: 100%;    /* ebeveyn konteynırın genişliğini tamamen kaplamasını sağlar */
+    max-width: 600px;
+}
+
+.days-row div {
+    flex: 1;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+
+
+
+
+/*sayılar */
+
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 sütun */
+    gap: 15px;
+    margin-top: 20px;   /* gün adları ile araya boşluk ekler*/
+    width: 100%;
+    max-width: 600px;
+}
+
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(254, 255, 254); 
+    border: 5px solid yellow; 
+    padding: 15px;
+    color: rgb(18, 1, 1);
+    font-size: 1rem;
+    font-weight: 900;
+    border-radius: 20px;
+    aspect-ratio: 1 / 1; /* Kare yapar (genişlik:yükseklik oranı 1:1) */
+    
+}
+
+@media (max-width: 768px) {
+    .date-grid{
+        gap: 10px;
+    }
+    .day{
+        padding: 10px; 
+        font-size: 0.9rem; 
+        font-weight: 900;   /* buraya biraz daha vakit ayır*/
+    }
+}
+
+
+@media (max-width:400px) {
+    .date-grid{
+        gap: 8px;
+    }
+    .day{
+        padding: 8px;
+        font-size: 0.9rem;
+        font-weight: 900;
+    }
+}
+.green{
+    border: 5px solid #00ff0a ;
+    background: radial-gradient(circle, #00ff0a,#8dff92); 
+}
+.orange{
+    border: 5px solid #ff7a00;
+    background: radial-gradient(circle, #00d1ff, #01aaff);
+    color: white;
+}
+.blue{
+    border: 5px solid #0500ff;
+}
+.gray{
+    border: 5px solid #e4e7eb;
+}
+
+
+.icon-small, .icon-big, .mounth{
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+margin-top: 20px;
+font-size: 20px;
+
+
+}
+
+
+
+/* Sağ kısım */
+.right {
+    width: 300px;
+    background-color: #04406b;
+}
+
+.user {
+    background-color: #c4c4c4; 
+    border: 5px solid white; 
+    border-radius: 50%; 
+    width: 50vw; 
+    height: 50vw; 
+    max-width: 100px; 
+    max-height: 100px; 
+    margin: 50px auto; 
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    
+}
+@media (max-width: 768px) {
+     .user {
+        max-width: 200px; 
+    max-height: 200px;
+    }
+}
+
+.user img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* fotoğraf oranlarını korur*/
+}
+
+.name{
+    font-family: "Akaya Kanadaka", system-ui;
+    color: white;
+    font-size: 24px;
+    font-weight: bold; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .name {
+        font-size: 30px;
+   }
+}
+
+
+/* çıkış yap kısmı*/
+
+.out {
+    background-color: #fffefe;
+    width: 80%; 
+    max-width: 150px; 
+    height: 40px; 
+    margin: 30px auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 40px; 
+}
+
+.btn-out {
+    display: flex; 
+    align-items: center; 
+    font-family: "Akaya Kanadaka", system-ui;
+    
+    color: rgb(9, 8, 8);
+    font-size: 1rem; 
+    font-weight: 400;
+}
+
+.icon-out {
+    width: 20px;
+    height: auto;
+    border-radius: 60px;
+    margin-right: 8px; 
+}
+
+@media (max-width: 768px) {
+    .out {
+        height: 50px;
+    }
+    .btn-out{
+        font-size: 0.9rem; 
+    }
+}
+
+
+
+
+/* Responsive ayarlar */
+@media screen and (max-width: 768px) {
+    .days-row div, .day {
+        font-size: 0.8rem; 
+        padding: 8px;
+    }
+
+    .date-grid {
+        gap: 5px; 
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        
+    }
+
+    .right {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        
+    }
+}
+
+
